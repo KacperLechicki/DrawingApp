@@ -1,0 +1,8 @@
+@use 'reset' as *;
+@use 'colors' as *;
+
+body {
+	min-height: 100vh;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.6rem;
+}
