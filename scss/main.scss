@@ -26,6 +26,8 @@ body {
 
 	.drawing-board {
 		flex: 1;
+		border-radius: 8px;
+		overflow: hidden;
 
 		canvas {
 			width: 100%;

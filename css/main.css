@@ -40,6 +40,8 @@ body {
 }
 .container .drawing-board {
   flex: 1;
+  border-radius: 8px;
+  overflow: hidden;
 }
 .container .drawing-board canvas {
   width: 100%;
