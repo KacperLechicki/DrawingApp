@@ -47,10 +47,13 @@ body {
   flex-direction: column;
   justify-content: space-between;
   padding: 15px 20px 0;
-  width: clamp(145px, 18vw, 210px);
+  width: clamp(175px, 18vw, 210px);
 }
 .container .tools-board .row {
   margin-bottom: 15px;
+}
+.container .tools-board .row .title {
+  font-weight: bold;
 }
 .container .tools-board .row .options {
   margin: 10px 0 0 5px;
@@ -62,22 +65,78 @@ body {
   margin-bottom: 10px;
   cursor: pointer;
 }
+.container .tools-board .row .options .option:is(:hover, .active) img {
+  filter: invert(27%) sepia(60%) saturate(3000%) hue-rotate(950deg) brightness(80%) contrast(100%);
+}
+.container .tools-board .row .options .option:is(:hover, .active) span,
+.container .tools-board .row .options .option label {
+  color: var(--background);
+}
 .container .tools-board .row .options .option input {
   cursor: pointer;
 }
 .container .tools-board .row .options .option #fill-color {
-  margin-left: 2.5px;
-  height: 14px;
-  width: 14px;
+  height: 17px;
+  width: 17px;
+}
+.container .tools-board .row .options .option #fill-color:checked ~ label {
+  color: var(--background);
 }
 .container .tools-board .row .options .option #size-slider {
+  margin-top: 10px;
   width: 100%;
+  height: 10px;
 }
 .container .tools-board .row .options .option img {
-  width: 20px;
+  width: 25px;
 }
 .container .tools-board .row .options .option span,
 .container .tools-board .row .options .option label {
   padding-left: 5px;
   color: #333;
+  cursor: pointer;
+}
+.container .tools-board .colors .options {
+  display: flex;
+  justify-content: space-between;
+}
+.container .tools-board .colors .options .option {
+  position: relative;
+  margin-top: 5px;
+  height: 20px;
+  width: 20px;
+  background-color: red;
+  border-radius: 50%;
+}
+.container .tools-board .colors .options .option:hover::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 15px;
+  width: 15px;
+  color: var(--white);
+  background-color: inherit;
+  border: 2px solid var(--white);
+  border-radius: inherit;
+}
+.container .tools-board .colors .options .option:first-child:hover::before {
+  border-color: #ccc;
+}
+.container .tools-board .colors .options .option:nth-child(1) {
+  background-color: white;
+  border: 1px solid #a7a7a7;
+}
+.container .tools-board .colors .options .option:nth-child(2) {
+  background-color: black;
+}
+.container .tools-board .colors .options .option:nth-child(3) {
+  background-color: red;
+}
+.container .tools-board .colors .options .option:nth-child(4) {
+  background-color: green;
+}
+.container .tools-board .colors .options .option:nth-child(5) {
+  background-color: blue;
 }/*# sourceMappingURL=main.css.map */
