@@ -1,5 +1,8 @@
 'use strict';
 
+const toolsBoard = document.querySelector('.tools-board');
+const drawBoard = document.querySelector('.drawing-board');
+
 const canvas = document.querySelector('canvas');
 const toolsButtons = document.querySelectorAll('.tool');
 const colorButtons = document.querySelectorAll('.color');
@@ -9,6 +12,8 @@ const colorPicker = document.querySelector('#color-picker');
 
 const clearButton = document.querySelector('.clear-canvas');
 const saveButton = document.querySelector('.save-picture');
+
+const burger = document.querySelector('.burger-menu');
 
 let isDrawing = false;
 let brushWidth = 5;
@@ -30,6 +35,16 @@ window.addEventListener('load', () => {
 	canvas.height = canvas.offsetHeight;
 	setBackground();
 });
+
+const handleBurger = () => {
+	if (toolsBoard.style.display == 'none') {
+		toolsBoard.style.display = 'block';
+		drawBoard.style.display = 'none';
+	} else {
+		toolsBoard.style.display = 'none';
+		drawBoard.style.display = 'block';
+	}
+};
 
 const setBackground = () => {
 	ctx.fillStyle = '#fff';
@@ -182,3 +197,5 @@ saveButton.addEventListener('click', () => {
 	link.href = canvas.toDataURL();
 	link.click();
 });
+
+burger.addEventListener('click', handleBurger);

@@ -189,4 +189,45 @@ body {
   background-color: rgb(60, 97, 211);
   box-shadow: inset 3px 4px 5px rgba(0, 0, 0, 0.4);
   text-shadow: 3px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.burger-menu {
+  display: none;
+  position: absolute;
+  bottom: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px 10px 2px 10px;
+  background: none;
+  border: none;
+  font-size: 3rem;
+  cursor: pointer;
+  z-index: 200;
+}
+
+@media only screen and (max-width: 600px) {
+  .container .tools-board {
+    display: none;
+    height: 90vh;
+    width: 100%;
+  }
+  .container .tools-board .colors .options {
+    display: flex;
+    justify-content: space-between;
+  }
+  .container .tools-board .colors .options .option {
+    height: 30px;
+    width: 30px;
+  }
+  .container .tools-board .colors .options .option.selected::before {
+    height: 22px;
+    width: 22px;
+  }
+  .container .drawing-board {
+    height: 90vh;
+    width: 90vw;
+  }
+  .burger-menu {
+    display: block;
+  }
 }/*# sourceMappingURL=main.css.map */
