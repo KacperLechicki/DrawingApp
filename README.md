@@ -1,5 +1,7 @@
 ==>https://kacperlechicki.github.io/DrawingApp/<==
 
+## WORKS ONLY ON DEVICES WITH SCREEN WIDTH > 600px
+
 # DrawingApp
   fun drawing application made for javascript practice
   
