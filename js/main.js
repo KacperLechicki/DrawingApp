@@ -24,3 +24,12 @@ const drawing = (e) => {
 };
 
 canvas.addEventListener('mousemove', drawing);
+
+//start drawing after clicking and holding mouse
+canvas.addEventListener('mousedown', () => {
+	isDrawing = true;
+	ctx.beginPath();
+});
+
+//end drawing after letting mouse
+canvas.addEventListener('mouseup', () => (isDrawing = false));
