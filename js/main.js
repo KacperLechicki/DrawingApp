@@ -7,6 +7,8 @@ const fillColor = document.querySelector('#fill-color');
 const sizeBar = document.querySelector('#size-slider');
 const colorPicker = document.querySelector('#color-picker');
 
+const clearButton = document.querySelector('.clear-canvas');
+
 let isDrawing = false;
 let brushWidth = 5;
 let selectedTool = 'brush';
@@ -124,6 +126,10 @@ const drawTriangle = (e) => {
 	}
 };
 
+const clearCanvas = () => {
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+};
+
 toolsButtons.forEach((btn) => {
 	btn.addEventListener('click', () => {
 		// console.log(btn.id);
@@ -158,3 +164,6 @@ canvas.addEventListener('mouseup', () => (isDrawing = false));
 
 //slider value as brush width
 sizeBar.addEventListener('change', () => (brushWidth = sizeBar.value));
+
+//clear canvas
+clearButton.addEventListener('click', clearCanvas);
