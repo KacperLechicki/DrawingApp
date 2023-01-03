@@ -49,6 +49,8 @@ const drawing = (e) => {
 		drawRectangle(e);
 	} else if (selectedTool === 'circle') {
 		drawCircle(e);
+	} else {
+		drawTriangle(e);
 	}
 };
 
@@ -78,6 +80,28 @@ const drawCircle = (e) => {
 	);
 
 	ctx.arc(prevMouseX, prevMouseY, radius, 0, 2 * Math.PI);
+
+	if (!fillColor.checked) {
+		ctx.stroke();
+	} else {
+		ctx.fill();
+	}
+};
+
+const drawTriangle = (e) => {
+	ctx.beginPath();
+
+	//moving triangle to the pointer
+	ctx.moveTo(prevMouseX, prevMouseY);
+
+	//creating first line
+	ctx.lineTo(e.offsetX, e.offsetY);
+
+	//bottom line of triangle
+	ctx.lineTo(prevMouseX * 2 - e.offsetX, e.offsetY);
+
+	//closing triangle
+	ctx.closePath();
 
 	if (!fillColor.checked) {
 		ctx.stroke();
