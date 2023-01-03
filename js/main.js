@@ -2,8 +2,10 @@
 
 const canvas = document.querySelector('canvas');
 const toolsButtons = document.querySelectorAll('.tool');
+const colorButtons = document.querySelectorAll('.color');
 const fillColor = document.querySelector('#fill-color');
 const sizeBar = document.querySelector('#size-slider');
+const colorPicker = document.querySelector('#color-picker');
 
 let isDrawing = false;
 let brushWidth = 5;
@@ -13,6 +15,8 @@ let prevMouseX;
 let prevMouseY;
 
 let snapshot;
+
+let selectedColor;
 
 //this method returns a drawing context on the canvas
 const ctx = canvas.getContext('2d');
@@ -29,6 +33,8 @@ const startDrawing = (e) => {
 	prevMouseY = e.offsetY;
 	ctx.beginPath();
 	ctx.lineWidth = brushWidth; //passing brush width
+	ctx.strokeStyle = selectedColor;
+	ctx.fillStyle = selectedColor;
 
 	//copying canvas data and passing as snapshot value
 	snapshot = ctx.getImageData(0, 0, canvas.width, canvas.height);
@@ -118,6 +124,21 @@ toolsButtons.forEach((btn) => {
 		btn.classList.add('active');
 		selectedTool = btn.id;
 	});
+});
+
+colorButtons.forEach((color) => {
+	color.addEventListener('click', () => {
+		document.querySelector('.selected').classList.remove('selected');
+		color.classList.add('selected');
+		selectedColor = window
+			.getComputedStyle(color)
+			.getPropertyValue('background-color');
+	});
+});
+
+colorPicker.addEventListener('change', () => {
+	colorPicker.parentElement.style.backgroundColor = colorPicker.value;
+	colorPicker.parentElement.click();
 });
 
 canvas.addEventListener('mousemove', drawing);
