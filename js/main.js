@@ -51,7 +51,16 @@ const drawing = (e) => {
 };
 
 const drawRectangle = (e) => {
-	ctx.strokeRect(
+	if (!fillColor.checked) {
+		return ctx.strokeRect(
+			e.offsetX,
+			e.offsetY,
+			prevMouseX - e.offsetX,
+			prevMouseY - e.offsetY
+		);
+	}
+
+	ctx.fillRect(
 		e.offsetX,
 		e.offsetY,
 		prevMouseX - e.offsetX,
