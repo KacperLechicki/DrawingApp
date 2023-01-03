@@ -76,8 +76,12 @@ body {
   cursor: pointer;
 }
 .container .tools-board .row .options .option #fill-color {
+  margin-left: 4px;
   height: 17px;
   width: 17px;
+}
+.container .tools-board .row .options .option #fill-color-label {
+  margin-left: 4px;
 }
 .container .tools-board .row .options .option #fill-color:checked ~ label {
   color: var(--background);
@@ -105,10 +109,9 @@ body {
   margin-top: 5px;
   height: 20px;
   width: 20px;
-  background-color: red;
   border-radius: 50%;
 }
-.container .tools-board .colors .options .option:hover::before {
+.container .tools-board .colors .options .option.selected::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -121,7 +124,7 @@ body {
   border: 2px solid var(--white);
   border-radius: inherit;
 }
-.container .tools-board .colors .options .option:first-child:hover::before {
+.container .tools-board .colors .options .option:first-child.selected::before {
   border-color: #ccc;
 }
 .container .tools-board .colors .options .option:nth-child(1) {
@@ -139,6 +142,10 @@ body {
 }
 .container .tools-board .colors .options .option:nth-child(5) {
   background-color: blue;
+}
+.container .tools-board .colors .options .option #color-picker {
+  opacity: 0;
+  cursor: pointer;
 }
 .container .tools-board .buttons button {
   margin-bottom: 10px;

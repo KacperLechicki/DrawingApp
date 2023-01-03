@@ -69,8 +69,13 @@ body {
 					}
 
 					#fill-color {
+						margin-left: 4px;
 						height: 17px;
 						width: 17px;
+
+						&-label {
+							margin-left: 4px;
+						}
 
 						&:checked ~ label {
 							color: var(--background);
@@ -108,10 +113,9 @@ body {
 					margin-top: 5px;
 					height: 20px;
 					width: 20px;
-					background-color: red;
 					border-radius: 50%;
 
-					&:hover::before {
+					&.selected::before {
 						content: '';
 						position: absolute;
 						top: 50%;
@@ -125,7 +129,7 @@ body {
 						border-radius: inherit;
 					}
 
-					&:first-child:hover::before {
+					&:first-child.selected::before {
 						border-color: #ccc;
 					}
 
@@ -148,6 +152,11 @@ body {
 
 					&:nth-child(5) {
 						background-color: blue;
+					}
+
+					#color-picker {
+						opacity: 0;
+						cursor: pointer;
 					}
 				}
 			}
