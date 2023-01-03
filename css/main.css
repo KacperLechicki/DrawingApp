@@ -139,4 +139,40 @@ body {
 }
 .container .tools-board .colors .options .option:nth-child(5) {
   background-color: blue;
+}
+.container .tools-board .buttons button {
+  margin-bottom: 10px;
+  padding: 12px 0;
+  width: 100%;
+  background: none;
+  border: 1px solid #a7a7a7;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: color 0.3s, background-color 0.3s, box-shadow 0.1s, text-shadow 0.1s;
+}
+.container .tools-board .buttons .clear-canvas {
+  color: #3e3e3f;
+  border: 1px solid #a7a7a7;
+}
+.container .tools-board .buttons .clear-canvas:hover {
+  color: white;
+  background-color: #a7a7a7;
+}
+.container .tools-board .buttons .clear-canvas:active {
+  background-color: #929292;
+  box-shadow: inset 3px 4px 5px rgba(0, 0, 0, 0.4);
+  text-shadow: 3px 4px 10px rgba(0, 0, 0, 0.3);
+}
+.container .tools-board .buttons .save-picture {
+  color: var(--background);
+  border: 1px solid var(--background);
+}
+.container .tools-board .buttons .save-picture:hover {
+  color: white;
+  background-color: var(--background);
+}
+.container .tools-board .buttons .save-picture:active {
+  background-color: rgb(60, 97, 211);
+  box-shadow: inset 3px 4px 5px rgba(0, 0, 0, 0.4);
+  text-shadow: 3px 4px 10px rgba(0, 0, 0, 0.3);
 }/*# sourceMappingURL=main.css.map */
