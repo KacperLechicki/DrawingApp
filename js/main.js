@@ -1,8 +1,10 @@
 'use strict';
 
 const canvas = document.querySelector('canvas');
+const toolsButtons = document.querySelectorAll('.tool');
 
 let isDrawing = false;
+let brushWidth = 5;
 
 //this method returns a drawing context on the canvas
 const ctx = canvas.getContext('2d');
@@ -23,12 +25,21 @@ const drawing = (e) => {
 	ctx.stroke();
 };
 
+toolsButtons.forEach((btn) => {
+	btn.addEventListener('click', () => {
+		// console.log(btn.id);
+        document.querySelector('.active').classList.remove('active');
+        btn.classList.add('active');
+	});
+});
+
 canvas.addEventListener('mousemove', drawing);
 
 //start drawing after clicking and holding mouse
 canvas.addEventListener('mousedown', () => {
 	isDrawing = true;
 	ctx.beginPath();
+	ctx.lineWidth = brushWidth; //passing brush width
 });
 
 //end drawing after letting mouse
