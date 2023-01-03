@@ -47,6 +47,8 @@ const drawing = (e) => {
 		ctx.stroke();
 	} else if (selectedTool === 'rectangle') {
 		drawRectangle(e);
+	} else if (selectedTool === 'circle') {
+		drawCircle(e);
 	}
 };
 
@@ -66,6 +68,22 @@ const drawRectangle = (e) => {
 		prevMouseX - e.offsetX,
 		prevMouseY - e.offsetY
 	);
+};
+
+const drawCircle = (e) => {
+	ctx.beginPath();
+
+	let radius = Math.sqrt(
+		Math.pow(prevMouseX - e.offsetX, 2) + Math.pow(prevMouseY - e.offsetY, 2)
+	);
+
+	ctx.arc(prevMouseX, prevMouseY, radius, 0, 2 * Math.PI);
+
+	if (!fillColor.checked) {
+		ctx.stroke();
+	} else {
+		ctx.fill();
+	}
 };
 
 toolsButtons.forEach((btn) => {
