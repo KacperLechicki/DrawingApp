@@ -8,6 +8,7 @@ const sizeBar = document.querySelector('#size-slider');
 const colorPicker = document.querySelector('#color-picker');
 
 const clearButton = document.querySelector('.clear-canvas');
+const saveButton = document.querySelector('.save-picture');
 
 let isDrawing = false;
 let brushWidth = 5;
@@ -27,7 +28,14 @@ window.addEventListener('load', () => {
 	//draw at exact position of mouse
 	canvas.width = canvas.offsetWidth;
 	canvas.height = canvas.offsetHeight;
+	setBackground();
 });
+
+const setBackground = () => {
+	ctx.fillStyle = '#fff';
+	ctx.fillRect(0, 0, canvas.width, canvas.height);
+	ctx.fillStyle = selectedColor;
+};
 
 const startDrawing = (e) => {
 	isDrawing = true;
@@ -127,7 +135,7 @@ const drawTriangle = (e) => {
 };
 
 const clearCanvas = () => {
-	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	setBackground();
 };
 
 toolsButtons.forEach((btn) => {
@@ -167,3 +175,10 @@ sizeBar.addEventListener('change', () => (brushWidth = sizeBar.value));
 
 //clear canvas
 clearButton.addEventListener('click', clearCanvas);
+
+saveButton.addEventListener('click', () => {
+	const link = document.createElement('a');
+	link.download = `${Date.now()}.jpg`;
+	link.href = canvas.toDataURL();
+	link.click();
+});
