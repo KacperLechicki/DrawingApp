@@ -13,10 +13,65 @@ html {
 :root {
   --black: black;
   --white: white;
+  --background: royalblue;
 }
 
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
   font-family: "Open Sans", sans-serif;
   font-size: 1.6rem;
+  background-color: var(--background);
+}
+
+.container {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  width: 100%;
+  max-width: 1200px;
+  height: 70vh;
+}
+.container section {
+  background-color: var(--white);
+  border-radius: 8px;
+  box-shadow: 8px 10px 8px rgba(0, 0, 0, 0.2);
+}
+.container .drawing-board {
+  flex: 1;
+  cursor: crosshair;
+}
+.container .tools-board {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 15px 20px 0;
+  width: clamp(145px, 18vw, 210px);
+}
+.container .tools-board .row {
+  margin-bottom: 15px;
+}
+.container .tools-board .row .options {
+  margin: 10px 0 0 5px;
+  list-style: none;
+}
+.container .tools-board .row .options .option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.container .tools-board .row .options .option:where(span, label) {
+  padding: 10px;
+  color: #333;
+}
+.container .tools-board .row .options .option input {
+  cursor: pointer;
+}
+.container .tools-board .row .options .option img {
+  width: 20px;
+}
+.container .tools-board .row .options .option #size-slider {
+  width: 100%;
 }/*# sourceMappingURL=main.css.map */
