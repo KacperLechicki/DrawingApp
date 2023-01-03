@@ -26,7 +26,13 @@ body {
 
 	.drawing-board {
 		flex: 1;
-		cursor: crosshair;
+
+		canvas {
+			width: 100%;
+			height: 100%;
+			cursor: crosshair;
+			z-index: 5;
+		}
 	}
 
 	.tools-board {
