@@ -31,8 +31,7 @@ body {
   gap: 10px;
   padding: 10px;
   width: 100%;
-  max-width: 1200px;
-  height: 70vh;
+  max-width: 1050px;
 }
 .container section {
   background-color: var(--white);
@@ -46,7 +45,7 @@ body {
 .container .tools-board {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 15px 20px 0;
   width: clamp(145px, 18vw, 210px);
 }
@@ -61,17 +60,24 @@ body {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
-}
-.container .tools-board .row .options .option:where(span, label) {
-  padding: 10px;
-  color: #333;
+  cursor: pointer;
 }
 .container .tools-board .row .options .option input {
   cursor: pointer;
 }
-.container .tools-board .row .options .option img {
-  width: 20px;
+.container .tools-board .row .options .option #fill-color {
+  margin-left: 2.5px;
+  height: 14px;
+  width: 14px;
 }
 .container .tools-board .row .options .option #size-slider {
   width: 100%;
+}
+.container .tools-board .row .options .option img {
+  width: 20px;
+}
+.container .tools-board .row .options .option span,
+.container .tools-board .row .options .option label {
+  padding-left: 5px;
+  color: #333;
 }/*# sourceMappingURL=main.css.map */

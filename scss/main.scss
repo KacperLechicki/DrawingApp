@@ -16,8 +16,7 @@ body {
 	gap: 10px;
 	padding: 10px;
 	width: 100%;
-	max-width: 1200px;
-	height: 70vh;
+	max-width: 1050px;
 
 	section {
 		background-color: var(--white);
@@ -33,7 +32,7 @@ body {
 	.tools-board {
 		display: flex;
 		flex-direction: column;
-		justify-content: space-around;
+		justify-content: space-between;
 
 		padding: 15px 20px 0;
 		width: clamp(145px, 18vw, 210px);
@@ -49,22 +48,30 @@ body {
 					display: flex;
 					align-items: center;
 					margin-bottom: 10px;
-
-					&:where(span, label) {
-						padding: 10px;
-						color: #333;
-					}
+					cursor: pointer;
 
 					input {
 						cursor: pointer;
+					}
+
+					#fill-color {
+						margin-left: 2.5px;
+						height: 14px;
+						width: 14px;
+					}
+
+					#size-slider {
+						width: 100%;
 					}
 
 					img {
 						width: 20px;
 					}
 
-					#size-slider {
-						width: 100%;
+					span,
+					label {
+						padding-left: 5px;
+						color: #333;
 					}
 				}
 			}
