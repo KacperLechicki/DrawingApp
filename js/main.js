@@ -46,7 +46,14 @@ const drawing = (e) => {
 	//adding copied data
 	ctx.putImageData(snapshot, 0, 0);
 
-	if (selectedTool === 'brush') {
+	//brush or eraser
+	if (selectedTool === 'brush' || selectedTool === 'eraser') {
+		if (selectedTool === 'brush') {
+			ctx.strokeStyle = selectedColor;
+		} else {
+			ctx.strokeStyle = '#fff';
+		}
+
 		//this method create a new line
 		ctx.lineTo(e.offsetX, e.offsetY);
 
