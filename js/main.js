@@ -3,6 +3,7 @@
 const canvas = document.querySelector('canvas');
 const toolsButtons = document.querySelectorAll('.tool');
 const fillColor = document.querySelector('#fill-color');
+const sizeBar = document.querySelector('#size-slider');
 
 let isDrawing = false;
 let brushWidth = 5;
@@ -126,3 +127,6 @@ canvas.addEventListener('mousedown', startDrawing);
 
 //end drawing after letting mouse
 canvas.addEventListener('mouseup', () => (isDrawing = false));
+
+//slider value as brush width
+sizeBar.addEventListener('change', () => (brushWidth = sizeBar.value));
